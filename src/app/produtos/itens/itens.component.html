@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <div class="carousel">
+        <div *ngFor="let produto of produtos">
+            <div class="produto-slide">
+                <div class="img-container">
+                    <img [src]="'../../../assets/produtos/' + produto.pp">
+                </div>
+        
+                <div class="desc-container">
+                    <h1>{{produto.nome_produto}}</h1>
+                    <h2>{{produto.nome_tipo}}</h2>
+                    <p>R${{produto.valor}} no Pix <span class="preco">R${{calcularDesconto(produto.valor, produto.desconto)}}</span> <span class="desconto"> {{produto.desconto}}% off</span></p>
+                </div>
+        
+                <button (click)="addToCarrinho(produto)" class="buy-butt">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>

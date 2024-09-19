@@ -1,0 +1,11 @@
+<div class="login">
+    <h1>Já sou cliente</h1>
+
+    <form id="formLogin" (ngSubmit)="onSubmit()" #userForm="ngForm">
+        <input type="text" id="name" name="name" placeholder="Usuario" [(ngModel)]="user.name" required>
+
+        <input type="password" id="password" name="password" placeholder="Senha" [(ngModel)]="user.password" required>
+
+        <button type="submit" class="blue" [disabled]="!userForm.form.valid">Entrar</button>
+    </form>
+</div>
